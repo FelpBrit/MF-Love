@@ -6,13 +6,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 165vh;
+    min-height: 100vh; /* Garante que o conteúdo não seja cortado */
     text-align: justify;
+    padding: 20px; /* Evita cortes nas laterais */
+    box-sizing: border-box;
 }
 
 .container {
-    width: 90%; /* Usa 90% da largura disponível */
-    max-width: 700px; /* Define um limite para telas grandes */
+    width: 90%;
+    max-width: 700px;
     padding: 50px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -23,7 +25,7 @@ body {
 
 .carousel {
     position: relative;
-    width: 100%; /* Ajusta para preencher todo o espaço do container */
+    width: 100%;
     margin: 20px 0;
 }
 
@@ -36,14 +38,14 @@ body {
 }
 
 .carousel-image {
-    width: 100%; /* Garante que a imagem preencha o container */
-    max-height: 650px; /* Ajuste conforme necessário */
-    object-fit: cover; /* Evita distorções e cortes */
+    width: 100%;
+    max-height: 500px; /* Ajuste para manter proporção */
+    object-fit: contain; /* Mantém a imagem inteira visível */
     display: none;
-    border: 15px solid white;
+    border: 10px solid white; /* Reduz borda para melhor visualização em telas menores */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    padding: 5px;
     background: white;
 }
 
@@ -75,33 +77,51 @@ body {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    flex-wrap: wrap; /* Permite melhor adaptação */
 }
 
 .time {
-    margin: 0 10px;
+    margin: 5px;
     font-size: 2rem;
 }
 
 .declaration {
     margin: 20px 0;
+    text-align: center;
 }
 
 h1, h2 {
     margin: 10px 0;
+    text-align: center;
 }
 
+/* Ajustes para telas menores */
 @media (max-width: 600px) {
     .container {
         max-width: 95%;
+        padding: 30px; /* Ajusta melhor o espaço interno */
     }
+
     h1 {
-        font-size: 24px;
+        font-size: 22px;
     }
+
     h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
+
     .time {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .carousel-image {
+        max-height: 300px; /* Reduz tamanho das imagens para telas pequenas */
+        border: 5px solid white; /* Ajuste da borda */
+        padding: 3px;
+    }
+
+    .carousel-button {
+        padding: 5px;
+        font-size: 14px; /* Botões menores para telas menores */
     }
 }
-
