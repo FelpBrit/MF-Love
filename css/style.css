@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Courier;
+    background: linear-gradient(to right, #1621d3, #ff77ff);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 165vh;
+    text-align: justify;
+}
+
+.container {
+    width: 90%; /* Usa 90% da largura disponível */
+    max-width: 700px; /* Define um limite para telas grandes */
+    padding: 50px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%; /* Ajusta para preencher todo o espaço do container */
+    margin: 20px 0;
+}
+
+.carousel-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-image {
+    width: 100%; /* Garante que a imagem preencha o container */
+    max-height: 650px; /* Ajuste conforme necessário */
+    object-fit: cover; /* Evita distorções e cortes */
+    display: none;
+    border: 15px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    background: white;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.time {
+    margin: 0 10px;
+    font-size: 2rem;
+}
+
+.declaration {
+    margin: 20px 0;
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 95%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .time {
+        font-size: 1.5rem;
+    }
+}
+
